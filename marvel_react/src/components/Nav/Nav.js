@@ -6,7 +6,7 @@ import Logo from '../../images/logo.png';
 const Nav = () => (
     // <div className='header'>
     <nav id="nav">
-        <div class="nav-content">
+        <div className="nav-content">
             <img src={Logo} alt="Marvel Logo" />
             {/* <ul>
                 <li><a href="">ABOUT</a></li>

@@ -10,7 +10,7 @@
   padding: 1rem;
 }
 
-form {
+.homeForm {
   padding: 3rem;
   background-color: white;
   border-radius: 50px;
@@ -18,7 +18,7 @@ form {
   width: 30%;
 }
 
-form h1 {
+.homeForm h1 {
   text-align: center;
   padding: 1rem;
   font-family: 'Bangers', sans-serif;
@@ -29,7 +29,7 @@ form h1 {
   margin-bottom: 40px;
 }
 
-input, textarea {
+#name, #password, #email {
   width: 100%;
   border: none;
   border: 1px solid black;
@@ -44,7 +44,7 @@ label {
   font-size: 1rem;
 }
 
-button {
+.homeBtn {
   outline: none;
   background-color: black;
   color: white;
@@ -58,7 +58,7 @@ button {
   border: 1px solid black;
 }
 
-button:hover {
+.homeBtn:hover {
   background-color: rgb(68, 65, 65);
   border: 1px solid rgb(68, 65, 65);
 }

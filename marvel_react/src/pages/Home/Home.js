@@ -3,33 +3,33 @@ import './Home.css';
 
 const HomePage = () => (
     <div className="home">
-        <form>
+        <form className="homeForm">
             <h1>LOGIN</h1>
-            <div class="input-group">
+            <div className="input-group">
                 <label for="name">Username</label>
                 <input id="name" type="text" required />
             </div>
-            <div class="input-group">
+            <div className="input-group">
                 <label for="password">Password</label>
                 <input id="password" type="password" required />
             </div>
-            <button type="submit">SUBMIT</button>
+            <button className="homeBtn" type="submit">SUBMIT</button>
         </form>
-        <form>
+        <form className="homeForm">
             <h1>SIGN UP</h1>
-            <div class="input-group">
+            <div className="input-group">
                 <label for="name">Username</label>
                 <input id="name" type="text" required />
             </div>
-            <div class="input-group">
+            <div className="input-group">
                 <label for="email">Email</label>
                 <input id="email" type="email" required />
             </div>
-            <div class="input-group">
+            <div className="input-group">
                 <label for="password">Password</label>
                 <input id="password" type="password" required />
             </div>
-            <button type="submit">SUBMIT</button>
+            <button className="homeBtn" type="submit">SUBMIT</button>
         </form>
     </div>
 )

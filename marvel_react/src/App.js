@@ -4,14 +4,16 @@ import { Switch, Route, Router, Link } from 'react-router-dom';
 import Nav from '../src/components/Nav/Nav';
 import HomePage from '../src/pages/Home/Home';
 import ProfilePage from '../src/pages/Profile/Profile';
+import CharSearchPage from '../src/pages/CharSearch/CharSearch';
 
-function App() {
+const App = () => {
   return (
     <div className="app">
       <Nav />
       <Switch>
         <Route exact path="/" component={HomePage} />
-        <Route  path="/profile" component={ProfilePage} />
+        <Route path="/profile" component={ProfilePage} />
+        <Route path="/search/character" component={CharSearchPage} />
       </Switch>
     </div>
   );
