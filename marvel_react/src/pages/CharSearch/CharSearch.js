@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './CharSearch.css';
 import axios from 'axios';
+import Nav from '../../components/Nav/Nav';
 import SearchForm from '../../components/SearchForm/SearchForm';
 import CharCard from '../../components/CharCard/CharCard';
 
@@ -32,19 +33,22 @@ const CharSearchPage = () => {
     }
 
     return (
-        <div className="charSearch">
-            <SearchForm handleOnSubmit={handleOnSubmit} handleOnChange={handleOnChange} search={search}/>
-            {char == 0
-                ?
-                <div></div>
-                :
-                error !== ""
+        <>
+            <Nav back_signout={"Back"} link={"/profile"} />
+            <div className="charSearch">
+                <SearchForm handleOnSubmit={handleOnSubmit} handleOnChange={handleOnChange} search={search} />
+                {char == 0
                     ?
-                    <p>{error}</p>
+                    <div></div>
                     :
-                    <CharCard char={char} />
-            }
-        </div>
+                    error !== ""
+                        ?
+                        <p>{error}</p>
+                        :
+                        <CharCard char={char} />
+                }
+            </div>
+        </>
     )
 }
 export default CharSearchPage;

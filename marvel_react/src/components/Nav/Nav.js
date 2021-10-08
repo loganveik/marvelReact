@@ -1,24 +1,15 @@
 import React from 'react';
 import './Nav.css';
 import Logo from '../../images/logo.png';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-const Nav = () => (
-    // <div className='header'>
+const Nav = (props) => (
     <nav id="nav">
         <div className="nav-content">
+            <Link id="link" to={props.link}>{props.back_signout}</Link>
             <img src={Logo} alt="Marvel Logo" />
-            {/* <ul>
-                <li><a href="">ABOUT</a></li>
-                <li><a href="#projects">PROJECTS</a></li>
-                <li><a href="#contact">CONTACT</a></li>
-                <li id="not"><a id="resume"
-                    href="https://drive.google.com/file/d/1tiXCMvwznPjx71Ui0AOhlyu4aq9BEkrNFeg01pOKaHw/view">Resume</a>
-                </li>
-            </ul> */}
+            <p>Hello, Logan</p>
         </div>
     </nav>
-    // </div >
-    // </div>
 )
 export default Nav;

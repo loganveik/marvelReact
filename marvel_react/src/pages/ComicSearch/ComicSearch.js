@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './ComicSearch.css';
 import axios from 'axios';
+import Nav from '../../components/Nav/Nav';
 import SearchForm from '../../components/SearchForm/SearchForm';
 import ComicCard from '../../components/ComicCard/ComicCard';
 
@@ -35,24 +36,26 @@ const ComicSearchPage = () => {
     }
 
     return (
-        <div className="comicSearch">
-            <SearchForm handleOnSubmit={handleOnSubmit} handleOnChange={handleOnChange} />
-            <div className="cardContainer">
-                {comic == 0
-                    ?
-                    <div></div>
-                    :
-                    error !== ""
+        <>
+            <Nav back_signout={"Back"} link={"/profile"} />
+            <div className="comicSearch">
+                <SearchForm handleOnSubmit={handleOnSubmit} handleOnChange={handleOnChange} />
+                <div className="cardContainer">
+                    {comic == 0
                         ?
-                        <p>{error}</p>
+                        <div></div>
                         :
-                        comic.map(item => (
-                            <ComicCard key={item.id} comic={item} />
-                        ))
-
-                }
+                        error !== ""
+                            ?
+                            <p>{error}</p>
+                            :
+                            comic.map(item => (
+                                <ComicCard key={item.id} comic={item} />
+                            ))
+                    }
+                </div>
             </div>
-        </div>
+        </>
     )
 }
 export default ComicSearchPage;
