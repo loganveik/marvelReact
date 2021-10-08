@@ -4,7 +4,7 @@ import './Home.css';
 const HomePage = () => (
     <div className="home">
         <form className="homeForm">
-            <h1>LOGIN</h1>
+            <h1>Login</h1>
             <div className="input-group">
                 <label for="name">Username</label>
                 <input id="name" type="text" required />
@@ -13,10 +13,10 @@ const HomePage = () => (
                 <label for="password">Password</label>
                 <input id="password" type="password" required />
             </div>
-            <button className="homeBtn" type="submit">SUBMIT</button>
+            <button className="homeBtn" type="submit">Submit</button>
         </form>
         <form className="homeForm">
-            <h1>SIGN UP</h1>
+            <h1>Sign Up</h1>
             <div className="input-group">
                 <label for="name">Username</label>
                 <input id="name" type="text" required />
@@ -29,7 +29,7 @@ const HomePage = () => (
                 <label for="password">Password</label>
                 <input id="password" type="password" required />
             </div>
-            <button className="homeBtn" type="submit">SUBMIT</button>
+            <button className="homeBtn" type="submit">Submit</button>
         </form>
     </div>
 )

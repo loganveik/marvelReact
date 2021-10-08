@@ -1,0 +1,32 @@
+.charCard {
+    display: flex;
+    width: 60%;
+    background-color: black;
+    color: white;
+    box-shadow: 0 3px 15px rgb(0 0 0 / 0.9);
+    font-family: 'Bangers', sans-serif;
+    position: relative;
+    margin: 2rem 0 0;
+}
+
+.charText {
+    flex-direction: column;
+    padding: 1rem;
+    width: 100%;
+}
+
+.charText h1 {
+    padding: 1rem;
+}
+
+.charText p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    line-height: 100%;
+}
+
+.charCard img {
+    width: 15rem;
+    transform: scale(1.075);
+    box-shadow: 0 3px 15px rgb(0 0 0 / 0.9);
+}

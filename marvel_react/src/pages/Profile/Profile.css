@@ -29,7 +29,6 @@
     overflow: hidden;
 }
 
-
 #img1 {
     position: absolute;
     width: 35rem;
@@ -44,7 +43,7 @@
     top: 0rem;
 }
 
-.card a {
+.profileSearchCharBtn, .profileSearchComicBtn {
     outline: none;
     background: transparent;
     color: white;
@@ -58,12 +57,13 @@
     font-family: 'Bangers', sans-serif;
 }
 
-.card a:hover {
-    border: 1px solid red;
-    background-color: red;
+.profileSearchCharBtn:hover, .profileSearchComicBtn:hover {
+    border: 1px solid white;
+    background-color: white;
+    color: black;
 }
 
-@media (max-width: 920px){
+@media (max-width: 920px) {
     .row {
         flex-direction: column;
         align-items: center;

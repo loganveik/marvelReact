@@ -1,0 +1,51 @@
+.comicCard {
+    display: flex;
+    width: 60%;
+    background-color: black;
+    color: white;
+    box-shadow: 0 3px 15px rgb(0 0 0 / 0.9);
+    font-family: 'Bangers', sans-serif;
+    margin: 1rem 0 3rem;
+}
+
+.comicText {
+    flex-direction: column;
+    padding: 1rem;
+    text-align: center;
+    position: relative;
+    width: 100%;
+}
+
+.comicText h1 {
+    padding: 1rem;
+}
+
+.comicText p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    line-height: 100%;
+    padding: 1rem 0;
+}
+
+.comicCard img {
+    width: 8rem;
+    transform: scale(1.075);
+    box-shadow: 0 3px 15px rgb(0 0 0 / 0.9);
+}
+
+.comicBtn {
+    outline: none;
+    background: transparent;
+    color: white;
+    padding: 1rem;
+    cursor: pointer;
+    border: 1px solid white;
+    bottom: 1rem;
+    right: 1rem;
+    position: absolute;
+}
+
+.comicBtn:hover{
+    color: black;
+    background-color: white;
+}
