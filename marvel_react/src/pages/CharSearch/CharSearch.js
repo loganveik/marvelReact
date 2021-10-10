@@ -18,6 +18,7 @@ const CharSearchPage = () => {
             setError(`Sorry, couldn't find '${search}'. Check your spelling, or search another character!`);
         } else {
             setChar(result.data.data.results[0]);
+            console.log(result.data.data.results[0])
         }
     }
 
@@ -34,7 +35,7 @@ const CharSearchPage = () => {
 
     return (
         <>
-            <Nav back_signout={"Back"} link={"/profile"} />
+            <Nav />
             <div className="charSearch">
                 <SearchForm handleOnSubmit={handleOnSubmit} handleOnChange={handleOnChange} search={search} />
                 {char == 0

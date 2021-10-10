@@ -3,7 +3,6 @@ nav {
     z-index: 1000;
     position: fixed;
     background-color: black;
-    font-family: 'Poppins' sans-serif;
     color: white;
 }
 
@@ -20,18 +19,20 @@ nav {
     width: 8rem;
 }
 
-.nav-content #link {
+.nav-content #signout {
     color: white;
     position: absolute;
     top: 1.5rem;
-    left: 1rem;
-    /* border: 1px solid white;
-    padding: 0.5rem;
-    border-radius: 20px; */
+    right: 1rem;
+}
+
+.nav-content #signout:hover {
+    color: red;
 }
 
 .nav-content p {
     position: absolute;
     top: 1.5rem;
-    right: 1rem;
+    left: 1rem;
+    font-size: 1rem;
 }

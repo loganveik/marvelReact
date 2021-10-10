@@ -13,17 +13,17 @@
 
 .homeForm {
   padding: 3rem;
-  /* background-color: rgba(0,0,0); */
-  background-color: rgba(28,28,28, 0.8);
+  background-color: rgba(0,0,0);
+  /* background-color: rgba(28,28,28, 0.8); */
   box-shadow: 0 3px 15px rgb(0 0 0 / 0.9);
   width: 30%;
-  border-radius: 20px;
+  /* border-radius: 20px; */
 }
 
 .homeForm h1 {
   text-align: start;
   padding: 1rem;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Bangers', sans-serif;
   font-size: 3rem;
   font-weight: lighter;
 }
@@ -32,7 +32,7 @@
   margin-bottom: 40px;
 }
 
-#name, #password, #email {
+#username, .password, .email {
   background: none;
   width: 100%;
   border: none;

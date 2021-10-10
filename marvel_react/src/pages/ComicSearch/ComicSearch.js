@@ -37,7 +37,7 @@ const ComicSearchPage = () => {
 
     return (
         <>
-            <Nav back_signout={"Back"} link={"/profile"} />
+            <Nav />
             <div className="comicSearch">
                 <SearchForm handleOnSubmit={handleOnSubmit} handleOnChange={handleOnChange} />
                 <div className="cardContainer">
