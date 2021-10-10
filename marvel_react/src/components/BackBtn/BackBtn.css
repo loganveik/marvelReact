@@ -1,0 +1,16 @@
+#back{
+    position: absolute;
+    top: 13%;
+    left: 3%;
+    color: white;
+    font-family: 'Bangers', sans-serif;
+    font-size: 2rem;
+    border: 1px solid black;
+    padding: 0.5rem 2rem;
+    border-radius: 50px;
+    background-color: black;
+}
+
+#back:hover{
+    border: 1px solid white;
+}

@@ -3,6 +3,7 @@ import Nav from '../../components/Nav/Nav';
 import './ViewReviews.css';
 import { db } from '../../firebase';
 import { onSnapshot, collection } from '@firebase/firestore';
+import BackBtn from '../../components/BackBtn/BackBtn';
 
 const ReviewsPage = () => {
     const [reviews, setReviews] = useState([]);
@@ -19,6 +20,7 @@ const ReviewsPage = () => {
         <>
             <Nav />
             <div className="view">
+                <BackBtn />
                 <div className="view_container">
                     {reviews.length === 0 ?
                         <p>Write a review to view it here!</p>

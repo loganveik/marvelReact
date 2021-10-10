@@ -4,7 +4,7 @@ import axios from 'axios';
 import Nav from '../../components/Nav/Nav';
 import SearchForm from '../../components/SearchForm/SearchForm';
 import ComicCard from '../../components/ComicCard/ComicCard';
-
+import BackBtn from '../../components/BackBtn/BackBtn';
 
 
 const ComicSearchPage = () => {
@@ -39,6 +39,7 @@ const ComicSearchPage = () => {
         <>
             <Nav />
             <div className="comicSearch">
+                <BackBtn />
                 <SearchForm handleOnSubmit={handleOnSubmit} handleOnChange={handleOnChange} />
                 <div className="cardContainer">
                     {comic == 0

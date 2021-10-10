@@ -4,7 +4,7 @@ import axios from 'axios';
 import Nav from '../../components/Nav/Nav';
 import SearchForm from '../../components/SearchForm/SearchForm';
 import CharCard from '../../components/CharCard/CharCard';
-
+import BackBtn from '../../components/BackBtn/BackBtn';
 
 
 const CharSearchPage = () => {
@@ -37,6 +37,7 @@ const CharSearchPage = () => {
         <>
             <Nav />
             <div className="charSearch">
+                <BackBtn />
                 <SearchForm handleOnSubmit={handleOnSubmit} handleOnChange={handleOnChange} search={search} />
                 {char == 0
                     ?
