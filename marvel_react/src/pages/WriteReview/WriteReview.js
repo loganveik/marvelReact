@@ -11,19 +11,22 @@ const WritePage = () => {
     const history = useHistory();
     const [character, setCharacter] = useState('');
     const [review, setReview] = useState('');
+    const [error, setError] = useState("");
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         const result = await axios.get(`https://gateway.marvel.com/v1/public/characters?name=${character}&ts=1&apikey=66c7889f262bbc69f0281c76ea6a366d&hash=25b9e11e593510855d8a6ef9ef4d9fb9`);
-        const name = result.data.data.results[0].name;
-        const img = result.data.data.results[0].thumbnail.path + '.' + result.data.data.results[0].thumbnail.extension;
-        const collectionRef = collection(db, "reviews");
-        const payLoad = { character: name, review: review, imgURL: img };
-        addDoc(collectionRef, payLoad)
-            .then(() => history.push("/view"));
+        if (result.data.data.results[0] === undefined) {
+            setError(`Sorry, '${character}' doesn't seem to be a marvel character. Try again!`);
+        } else {
+            const name = result.data.data.results[0].name;
+            const img = result.data.data.results[0].thumbnail.path + '.' + result.data.data.results[0].thumbnail.extension;
+            const collectionRef = collection(db, "reviews");
+            const payLoad = { character: name, review: review, imgURL: img };
+            addDoc(collectionRef, payLoad)
+                .then(() => history.push("/view"));
+        }
     };
-
-
 
     return (
         <>
@@ -43,6 +46,7 @@ const WritePage = () => {
                     <div className="btn">
                         <button type="submit">Submit</button>
                     </div>
+                    <p>{error}</p>
                 </form>
             </div>
 

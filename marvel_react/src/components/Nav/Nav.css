@@ -20,14 +20,24 @@ nav {
 }
 
 .nav-content #signout {
-    color: white;
+    /* color: white; */
     position: absolute;
-    top: 1.5rem;
+    top: .9rem;
     right: 1rem;
+    font-family: 'Bangers', sans-serif;
+    border: 1px solid white;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 1.25rem;
+    transition: 0.2s;
+    background-color: white;
+    color: black;
 }
 
 .nav-content #signout:hover {
-    color: red;
+    border: 1px solid rgb(216, 216, 216);
+    background-color: rgb(216, 216, 216);
+    /* color: black; */
 }
 
 .nav-content p {

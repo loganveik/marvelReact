@@ -2,6 +2,7 @@
     background-image: url(../../images/marvelBackground.jpeg);
     background-size: cover;
     background-attachment: fixed;
+    background-repeat: repeat-y;
     width: 100%;
     height: 100vh;
     display: flex;
@@ -11,7 +12,14 @@
     padding: 1rem;
 }
 
-.row {
+.row1 {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    margin-top: 5%;
+}
+
+.row2 {
     display: flex;
     width: 100%;
     justify-content: space-evenly;
@@ -43,7 +51,43 @@
     top: 0rem;
 }
 
-.profileSearchCharBtn, .profileSearchComicBtn {
+#img3 {
+    position: absolute;
+    width: 32rem;
+    right: -18rem;
+    top: 0rem;
+    transform: rotate(-20deg);
+    border: 3px solid white;
+}
+
+#img4 {
+    width: 13rem;
+    right: -3rem;
+    bottom: 2rem;
+    transform: rotate(-15deg);
+}
+
+#img5 {
+    width: 10rem;
+    right: 4rem;
+    bottom: -2rem;
+    transform: rotate(-15deg);
+}
+
+#img6 {
+    width: 8rem;
+    right: -2rem;
+    bottom: -2rem;
+    transform: rotate(-15deg);
+}
+
+.viewPic {
+    position: absolute;
+    border: 2px solid white;
+    box-shadow: 0 3px 20px rgb(0 0 0 / 0.9);
+}
+
+.profileBtn, .profileBtn {
     outline: none;
     background: transparent;
     color: white;
@@ -55,17 +99,28 @@
     left: 1rem;
     bottom: 1rem;
     font-family: 'Bangers', sans-serif;
+    transition: 0.2s;
 }
 
-.profileSearchCharBtn:hover, .profileSearchComicBtn:hover {
+.profileBtn:hover, .profileBtn:hover {
     border: 1px solid white;
     background-color: white;
     color: black;
 }
 
 @media (max-width: 920px) {
-    .row {
+    .row1 {
         flex-direction: column;
         align-items: center;
+        margin-top: 35rem;
+    }
+    .row2 {
+        flex-direction: column;
+        align-items: center;
+    }
+    .card {
+        height: 15rem;
+        width: 25rem;
+        margin: 1rem 0;
     }
 }

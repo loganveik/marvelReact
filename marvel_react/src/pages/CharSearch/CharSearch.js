@@ -38,7 +38,7 @@ const CharSearchPage = () => {
             <Nav />
             <div className="charSearch">
                 <BackBtn />
-                <SearchForm handleOnSubmit={handleOnSubmit} handleOnChange={handleOnChange} search={search} />
+                <SearchForm handleOnSubmit={handleOnSubmit} handleOnChange={handleOnChange} search={search} ph={"Search any character"}/>
                 {char == 0
                     ?
                     <div></div>

@@ -62,3 +62,8 @@
     cursor: pointer;
     font-family: 'Bangers', sans-serif;
 }
+
+.write form p{
+    text-align: center;
+    margin-top: 1rem;
+}

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Nav from '../../components/Nav/Nav';
 import './ViewReviews.css';
 import { db } from '../../firebase';
-import { onSnapshot, collection, deleteDoc, doc } from '@firebase/firestore';
+import { onSnapshot, collection, deleteDoc, doc, setDoc } from '@firebase/firestore';
 import BackBtn from '../../components/BackBtn/BackBtn';
 
 const ReviewsPage = () => {
@@ -18,7 +18,6 @@ const ReviewsPage = () => {
         const docRef = doc(db, "reviews", id);
         await deleteDoc(docRef);
     };
-
 
     return (
         <>

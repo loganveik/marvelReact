@@ -15,8 +15,9 @@ const ComicSearchPage = () => {
     const getComic = async () => {
         const result = await axios.get(`https://gateway.marvel.com/v1/public/comics?title=${search}&limit=6&ts=1&apikey=66c7889f262bbc69f0281c76ea6a366d&hash=25b9e11e593510855d8a6ef9ef4d9fb9`);
         const data = result.data.data.results;
-        if (data === undefined) {
-            setError(`Sorry, couldn't find ${search}. Check your spelling, or search another character!`);
+        // console.log(data)
+        if (data.length === 0) {
+            setError(`Sorry, couldn't find '${search}'. Check your spelling, or search another comic!`);
         } else {
             setComic(data);
         }
@@ -40,7 +41,7 @@ const ComicSearchPage = () => {
             <Nav />
             <div className="comicSearch">
                 <BackBtn />
-                <SearchForm handleOnSubmit={handleOnSubmit} handleOnChange={handleOnChange} />
+                <SearchForm handleOnSubmit={handleOnSubmit} handleOnChange={handleOnChange} ph={"Search any comic"}/>
                 <div className="cardContainer">
                     {comic == 0
                         ?

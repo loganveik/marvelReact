@@ -11,7 +11,7 @@ const Nav = () => {
     return (
         <nav id="nav">
             <div className="nav-content">
-                {currentUser && <p>{currentUser.email}</p>}
+                {/* {currentUser && <p>{currentUser.email}</p>} */}
                 {currentUser && <Link id="signout" onClick={async e => {
                     e.preventDefault();
                     logout();
