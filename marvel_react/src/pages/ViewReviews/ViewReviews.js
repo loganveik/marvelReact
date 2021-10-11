@@ -2,19 +2,23 @@ import React, { useEffect, useState } from 'react';
 import Nav from '../../components/Nav/Nav';
 import './ViewReviews.css';
 import { db } from '../../firebase';
-import { onSnapshot, collection } from '@firebase/firestore';
+import { onSnapshot, collection, deleteDoc, doc } from '@firebase/firestore';
 import BackBtn from '../../components/BackBtn/BackBtn';
 
 const ReviewsPage = () => {
     const [reviews, setReviews] = useState([]);
 
-    // console.log(reviews);
-    useEffect(
-        () =>
-            onSnapshot(collection(db, "reviews"), ((snapshot) =>
-                setReviews(snapshot.docs.map(doc => ({ ...doc.data(), id: doc.id })))
-                // console.log(snapshot.docs.map(doc => ({ ...doc.data(), id: doc.id })))
-            )), []);
+    useEffect(() =>
+        onSnapshot(collection(db, "reviews"), ((snapshot) =>
+            setReviews(snapshot.docs.map(doc => ({ ...doc.data(), id: doc.id })))
+        )), []
+    );
+
+    const handleDelete = async (id) => {
+        const docRef = doc(db, "reviews", id);
+        await deleteDoc(docRef);
+    };
+
 
     return (
         <>
@@ -32,6 +36,7 @@ const ReviewsPage = () => {
                                     <h1>{review.character}</h1>
                                     <p>{review.review}</p>
                                 </div>
+                                <button onClick={() => handleDelete(review.id)} className="deleteBtn"><i class="fas fa-trash"></i></button>
                             </div>
                         ))
                     }
