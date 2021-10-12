@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { getAuth, createUserWithEmailAndPassword, updateProfile, signInWithEmailAndPassword } from 'firebase/auth';
 import Logo from '../../images/logo.png';
+import { ClipLoader } from 'react-spinners';
 
 const HomePage = () => {
     const history = useHistory();
@@ -11,14 +12,15 @@ const HomePage = () => {
     const [registerEmail, setRegisterEmail] = useState('');
     const [registerPassword, setRegisterPassword] = useState('');
 
-    const [loading, setLoading] = useState('');
+    const [registerLoading, setRegisterLoading] = useState(false);
+    const [loginLoading, setLoginLoading] = useState(false);
 
     const [loginEmail, setLoginEmail] = useState('');
     const [loginPassword, setLoginPassword] = useState('');
 
     const onSignup = (e) => {
         e.preventDefault();
-        setLoading(true);
+        setRegisterLoading(true);
         const auth = getAuth();
         createUserWithEmailAndPassword(auth, registerEmail, registerPassword)
             .then(() => {
@@ -30,12 +32,12 @@ const HomePage = () => {
                     })
                     .catch(e => alert(e.message));
             }).catch(e => alert(e.message))
-            .finally(() => setLoading(false))
+            .finally(() => setRegisterLoading(false))
     }
 
     const onLogin = (e) => {
         e.preventDefault();
-        setLoading(true);
+        setLoginLoading(true);
         const auth = getAuth();
         signInWithEmailAndPassword(auth, loginEmail, loginPassword)
             .then((userCredential) => {
@@ -43,7 +45,7 @@ const HomePage = () => {
                 history.push('/profile');
             })
             .catch(e => alert(e.message))
-            .finally(() => setLoading(false))
+            .finally(() => setLoginLoading(false))
     }
 
     useEffect(() => {
@@ -72,7 +74,7 @@ const HomePage = () => {
                         <label htmlFor="password">Password</label>
                         <input value={loginPassword} onChange={(e) => setLoginPassword(e.target.value)} className="password" type="password" required />
                     </div>
-                    <button className="login_btn" type="submit" onClick={onLogin}>{loading ? 'Logging in' : 'Submit'}</button>
+                    <button className="login_btn" type="submit" onClick={onLogin}>{loginLoading ? <ClipLoader size={20} /> : 'Submit'}</button>
                 </form>
                 <form className="homeForm">
                     <h1>Sign Up</h1>
@@ -88,7 +90,7 @@ const HomePage = () => {
                         <label htmlFor="password">Password</label>
                         <input value={registerPassword} onChange={(e) => setRegisterPassword(e.target.value)} name="password" className="password" type="password" required />
                     </div>
-                    <button className="signup_btn" type="submit" onClick={onSignup}>{loading ? 'Creating Account' : 'Submit'}</button>
+                    <button className="signup_btn" type="submit" onClick={onSignup}>{registerLoading ? <ClipLoader size={20} /> : 'Submit'}</button>
                 </form>
             </div>
         </>
