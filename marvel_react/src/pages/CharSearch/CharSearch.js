@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
 import './CharSearch.css';
+import React, { useState } from 'react';
 import axios from 'axios';
 import Nav from '../../components/Nav/Nav';
 import SearchForm from '../../components/SearchForm/SearchForm';
@@ -18,7 +18,6 @@ const CharSearchPage = () => {
             setError(`Sorry, couldn't find '${search}'. Check your spelling, or search another character!`);
         } else {
             setChar(result.data.data.results[0]);
-            console.log(result.data.data.results[0])
         }
     }
 

@@ -1,5 +1,5 @@
-import React from 'react';
 import './CharCard.css';
+import React from 'react';
 
 const CharCard = ({char}) => {
     return (

@@ -1,8 +1,8 @@
+import './ViewReviews.css';
 import React, { useEffect, useState } from 'react';
 import Nav from '../../components/Nav/Nav';
-import './ViewReviews.css';
 import { db } from '../../firebase';
-import { onSnapshot, collection, deleteDoc, doc, setDoc } from '@firebase/firestore';
+import { onSnapshot, collection, deleteDoc, doc } from '@firebase/firestore';
 import BackBtn from '../../components/BackBtn/BackBtn';
 
 const ReviewsPage = () => {
@@ -26,7 +26,7 @@ const ReviewsPage = () => {
                 <BackBtn />
                 <div className="view_container">
                     {reviews.length === 0 ?
-                        <p>Write a review to view it here!</p>
+                        <p id="writeP">Write a review to view it here!</p>
                         :
                         reviews.map(review => (
                             <div className="reviewCard" key={review.id}>

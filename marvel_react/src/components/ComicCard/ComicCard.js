@@ -1,5 +1,5 @@
-import React from 'react';
 import './ComicCard.css';
+import React from 'react';
 
 const ComicCard = ({ comic }) => {
     return (

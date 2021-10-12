@@ -1,8 +1,8 @@
+import './WriteReview.css';
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import Nav from '../../components/Nav/Nav';
 import BackBtn from '../../components/BackBtn/BackBtn';
-import './WriteReview.css';
 import axios from 'axios';
 import { db } from '../../firebase';
 import { addDoc, collection } from '@firebase/firestore';
@@ -37,11 +37,11 @@ const WritePage = () => {
                     <h1>Write A Review For Your Favorite Marvel Character!</h1>
                     <div className="input-group">
                         <label htmlFor="character">Character</label>
-                        <input value={character} onChange={(e) => setCharacter(e.target.value)} value={character} name="character" className="character" required />
+                        <input value={character} onChange={(e) => setCharacter(e.target.value)} name="character" className="character" required />
                     </div>
                     <div className="input-group">
                         <label htmlFor="review">Review</label>
-                        <textarea value={review} onChange={(e) => setReview(e.target.value)} value={review} name="review" className="review" required></textarea>
+                        <textarea value={review} onChange={(e) => setReview(e.target.value)} name="review" className="review" required></textarea>
                     </div>
                     <div className="btn">
                         <button type="submit">Submit</button>

@@ -1,32 +1,33 @@
 .view {
-    background-image: url(../../images/marvelBackground.jpeg);
-    background-size: cover;
-    background-attachment: fixed;
     width: 100%;
     height: 100vh;
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
     align-items: center;
     padding: 1rem;
     color: white;
     position: relative;
 }
 
-
 .view_container {
     width: 50%;
-    /* height: 70%;
-    overflow: auto;
-    display: flex; */
+    display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    position: absolute;
-    /* margin-top: -10%; */
+    margin-top: 5rem;
+    padding: 0 2rem 1.5rem;
 }
 
 .view_container p {
     text-align: center;
+    font-size: 2rem;
+}
+
+.view_container #writeP {
+    margin-top: 17rem;
+    letter-spacing: 2px;
+    /* color: black; */
+    font-family: 'Bangers', sans-serif;
 }
 
 .reviewCard {
@@ -41,15 +42,12 @@
     transition: 0.5s;
 }
 
-.reviewCard:hover{
-    transform: scale(1.05);
-}
 
 .reviewText {
     flex-direction: column;
     padding: 1rem;
     width: 100%;
-    text-align: center;
+    /* text-align: center; */
 }
 
 .reviewText h1 {
@@ -60,6 +58,7 @@
     font-family: 'Poppins', sans-serif;
     font-size: 1rem;
     line-height: 100%;
+    /* text-align: start; */
 }
 
 .reviewCard img {

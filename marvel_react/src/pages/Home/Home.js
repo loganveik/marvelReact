@@ -1,32 +1,68 @@
-import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
-import { useAuth } from '../../context/AuthContext';
-// import Nav from '../../components/Nav/Nav';
 import './Home.css';
+import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
+import { getAuth, createUserWithEmailAndPassword, updateProfile, signInWithEmailAndPassword } from 'firebase/auth';
+import Logo from '../../images/logo.png';
 
 const HomePage = () => {
     const history = useHistory();
-    // const [username, setUsername] = useState('');
+
+    const [username, setUsername] = useState('');
     const [registerEmail, setRegisterEmail] = useState('');
     const [registerPassword, setRegisterPassword] = useState('');
+
+    const [loading, setLoading] = useState('');
+
     const [loginEmail, setLoginEmail] = useState('');
     const [loginPassword, setLoginPassword] = useState('');
-    const { register } = useAuth();
-    const { login } = useAuth();
+
+    const onSignup = (e) => {
+        e.preventDefault();
+        setLoading(true);
+        const auth = getAuth();
+        createUserWithEmailAndPassword(auth, registerEmail, registerPassword)
+            .then(() => {
+                updateProfile(auth.currentUser, { displayName: username })
+                    .then(() => {
+                        setUsername('');
+                        setRegisterEmail('');
+                        setRegisterPassword('');
+                    })
+                    .catch(e => alert(e.message));
+            }).catch(e => alert(e.message))
+            .finally(() => setLoading(false))
+    }
+
+    const onLogin = (e) => {
+        e.preventDefault();
+        setLoading(true);
+        const auth = getAuth();
+        signInWithEmailAndPassword(auth, loginEmail, loginPassword)
+            .then((userCredential) => {
+                localStorage.setItem('token', userCredential._tokenResponse.idToken);
+                history.push('/profile');
+            })
+            .catch(e => alert(e.message))
+            .finally(() => setLoading(false))
+    }
+
+    useEffect(() => {
+        const token = localStorage.getItem('token');
+        if (token) {
+            history.push('/profile')
+        }
+    }, [])
+
 
     return (
         <>
-            {/* <Nav /> */}
+            <nav id="nav">
+                <div className="nav-content">
+                    <img src={Logo} alt="Marvel Logo" />
+                </div>
+            </nav>
             <div className="home">
-                <form className="homeForm" onSubmit={async e => {
-                    e.preventDefault();
-                    login(loginEmail, loginPassword)
-                        .then((response) => {
-                            console.log(response);
-                            history.push('/profile');
-                        })
-                        .catch((error) => console.log(error.message))
-                }}>
+                <form className="homeForm">
                     <h1>Login</h1>
                     <div className="input-group">
                         <label htmlFor="email">Email</label>
@@ -36,23 +72,14 @@ const HomePage = () => {
                         <label htmlFor="password">Password</label>
                         <input value={loginPassword} onChange={(e) => setLoginPassword(e.target.value)} className="password" type="password" required />
                     </div>
-                    <button className="homeBtn" type="submit" >Submit</button>
+                    <button className="login_btn" type="submit" onClick={onLogin}>{loading ? 'Logging in' : 'Submit'}</button>
                 </form>
-                <form className="homeForm" onSubmit={async e => {
-                    e.preventDefault();
-                    register(registerEmail, registerPassword)
-                        .then((response) => {
-                            console.log(response);
-                            setRegisterEmail('');
-                            setRegisterPassword('');
-                        })
-                        .catch((error) => console.log(error.message))
-                }}>
+                <form className="homeForm">
                     <h1>Sign Up</h1>
-                    {/* <div className="input-group">
+                    <div className="input-group">
                         <label htmlFor="name">Username</label>
-                        <input value={username} onChange={(e) => setUsername(e.target.value)} name="name" id="username" type="text" required />
-                    </div> */}
+                        <input value={username} onChange={(e) => setUsername(e.target.value)} name="name" id="username" type="name" required />
+                    </div>
                     <div className="input-group">
                         <label htmlFor="email">Email</label>
                         <input value={registerEmail} onChange={(e) => setRegisterEmail(e.target.value)} name="email" className="email" type="email" required />
@@ -61,7 +88,7 @@ const HomePage = () => {
                         <label htmlFor="password">Password</label>
                         <input value={registerPassword} onChange={(e) => setRegisterPassword(e.target.value)} name="password" className="password" type="password" required />
                     </div>
-                    <button className="homeBtn" type="submit">Submit</button>
+                    <button className="signup_btn" type="submit" onClick={onSignup}>{loading ? 'Creating Account' : 'Submit'}</button>
                 </form>
             </div>
         </>

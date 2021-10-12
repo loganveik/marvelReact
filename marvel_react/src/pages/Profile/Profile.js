@@ -1,5 +1,5 @@
-import React from 'react';
 import './Profile.css';
+import React from 'react';
 import Nav from '../../components/Nav/Nav';
 import hulk from '../../images/hulk.png';
 import xmen from '../../images/xmen.png';
