@@ -42,9 +42,9 @@
 
 #img2 {
     position: absolute;
-    width: 23rem;
-    right: -8rem;
-    top: 0rem;
+    width: 30rem;
+    right: -15rem;
+    top: -2rem;
 }
 
 #img3 {
@@ -75,6 +75,33 @@
     right: -2rem;
     bottom: -2rem;
     transform: rotate(-15deg);
+}
+
+.writePic {
+    position: absolute;
+    border: 2px solid white;
+    /* box-shadow: 0 3px 20px rgb(0 0 0 / 0.9); */
+}
+
+#img7 {
+    width: 33rem;
+    right: -22rem;
+    bottom: 11rem;
+    transform: rotate(-7deg);
+}
+
+#img8 {
+    width: 33rem;
+    right: -25rem;
+    bottom: 4rem;
+    transform: rotate(-4deg);
+}
+
+#img9 {
+    width: 33rem;
+    right: -21rem;
+    bottom: 0rem;
+    transform: rotate(-4deg);
 }
 
 .viewPic {

@@ -30,3 +30,38 @@
     transform: scale(1.075);
     box-shadow: 0 3px 15px rgb(0 0 0 / 0.9);
 }
+
+@media(max-width: 1100px) {
+    .charCard {
+        width: 80%;
+    }
+}
+
+@media(max-width: 800px) {
+    .charCard {
+        width: 90%;
+    }
+    .charText p {
+        font-size: 0.8rem;
+    }
+    .charCard img {
+        width: 12rem;
+    }
+}
+
+@media(max-width: 550px){
+    .charCard img {
+        transform: scale(1);
+    }
+    .charText p {
+        font-size: 1rem;
+    }
+    .charCard{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem 0 0;
+        text-align: center;
+        border-radius: 20px;
+    }
+}

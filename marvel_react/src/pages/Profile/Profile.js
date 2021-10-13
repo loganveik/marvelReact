@@ -6,7 +6,9 @@ import xmen from '../../images/xmen.png';
 import img1 from '../../images/img2.png';
 import img2 from '../../images/img4.png';
 import img3 from '../../images/img5.png';
-import write from '../../images/writess.png';
+import write1 from '../../images/write1.png';
+import write2 from '../../images/write2.png';
+import write3 from '../../images/write3.png';
 import { Link } from "react-router-dom";
 
 const ProfilePage = () => {
@@ -27,7 +29,9 @@ const ProfilePage = () => {
                 </div>
                 <div className="row2">
                     <div className="card">
-                        <img src={write} id="img3" alt="undraw" />
+                        <img src={write3} id="img9" className="writePic" alt="undraw" />
+                        <img src={write2} id="img8" className="writePic" alt="undraw" />
+                        <img src={write1} id="img7" className="writePic" alt="undraw" />
                         <Link className="profileBtn" to="/write">Write Review</Link>
                     </div>
                     <div className="card">

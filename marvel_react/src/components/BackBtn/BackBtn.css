@@ -1,7 +1,7 @@
-#back{
+#back {
     position: fixed;
-    top: 13%;
-    left: 3%;
+    top: 6rem;
+    left: 3rem;
     color: white;
     font-family: 'Bangers', sans-serif;
     font-size: 1.5rem;
@@ -11,6 +11,13 @@
     background-color: black;
 }
 
-#back:hover{
+#back:hover {
     border: 1px solid white;
+}
+
+@media(max-width: 600px) {
+    #back {
+        font-size: 1.5rem;
+        padding: 0.5rem 2rem;
+    }
 }
