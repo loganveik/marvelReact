@@ -64,7 +64,7 @@ const HomePage = () => {
                 </div>
             </nav>
             <div className="home">
-                <form className="homeForm">
+                <form id="login_form" className="homeForm">
                     <h1>Login</h1>
                     <div className="input-group">
                         <label htmlFor="email">Email</label>
@@ -74,7 +74,9 @@ const HomePage = () => {
                         <label htmlFor="password">Password</label>
                         <input value={loginPassword} onChange={(e) => setLoginPassword(e.target.value)} className="password" type="password" required />
                     </div>
-                    <button className="login_btn" type="submit" onClick={onLogin}>{loginLoading ? <ClipLoader size={20} /> : 'Submit'}</button>
+                    <div id="btns">
+                        <button className="login_btn" type="submit" onClick={onLogin}>{loginLoading ? <ClipLoader size={20} /> : 'Submit'}</button>
+                    </div>
                 </form>
                 <form className="homeForm">
                     <h1>Sign Up</h1>
@@ -90,7 +92,9 @@ const HomePage = () => {
                         <label htmlFor="password">Password</label>
                         <input value={registerPassword} onChange={(e) => setRegisterPassword(e.target.value)} name="password" className="password" type="password" required />
                     </div>
-                    <button className="signup_btn" type="submit" onClick={onSignup}>{registerLoading ? <ClipLoader size={20} /> : 'Submit'}</button>
+                    <div id="btns">
+                        <button className="signup_btn" type="submit" onClick={onSignup}>{registerLoading ? <ClipLoader size={20} /> : 'Submit'}</button>
+                    </div>
                 </form>
             </div>
         </>

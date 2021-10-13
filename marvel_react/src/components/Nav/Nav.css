@@ -41,3 +41,12 @@ nav {
     font-size: 1.5rem;
     font-family: 'Poppins', sans-serif;
 }
+
+@media (max-width: 800px) {
+    .nav-content p {
+        display: none;
+    }
+    .nav-content {
+        justify-content: start;
+    }
+}

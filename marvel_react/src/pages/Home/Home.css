@@ -45,6 +45,11 @@ label {
   text-align: start;
 }
 
+#btns{
+  width: 100%;
+  text-align: center;
+}
+
 .signup_btn, .login_btn {
   outline: none;
   border: none;
@@ -63,4 +68,27 @@ label {
 .signup_btn:hover, .login_btn:hover {
   background-color: white;
   color: black;
+}
+
+@media (max-width: 1000px) {
+  .homeForm {
+    width: 40%;
+  }
+}
+
+@media (max-width: 830px) {
+  .home {
+    flex-direction: column;
+    justify-content: start;
+  }
+  .homeForm {
+    width: 90%;
+    margin: 1rem 0;
+  }
+  #login_form {
+    margin-top: 5rem;
+  }
+  .signup_btn, .login_btn {
+    width: 100%;
+  }
 }
