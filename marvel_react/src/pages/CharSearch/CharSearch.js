@@ -36,7 +36,7 @@ const CharSearchPage = () => {
         <>
             <Nav />
             <div className="charSearch">
-                <BackBtn />
+                <BackBtn id={"char_search_back"}/>
                 <SearchForm handleOnSubmit={handleOnSubmit} handleOnChange={handleOnChange} search={search} ph={"Search any character"}/>
                 {char == 0
                     ?

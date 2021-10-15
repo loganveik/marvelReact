@@ -1,4 +1,4 @@
-#back {
+.back {
     position: fixed;
     top: 6rem;
     left: 3rem;
@@ -11,13 +11,16 @@
     background-color: black;
 }
 
-#back:hover {
+.back:hover {
     border: 1px solid white;
 }
 
 @media(max-width: 600px) {
-    #back {
+    .back {
         font-size: 1.5rem;
         padding: 0.5rem 2rem;
+        position: relative;
+        margin-left: -5rem;
+        margin-top: 0rem;
     }
 }

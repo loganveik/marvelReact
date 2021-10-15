@@ -38,7 +38,7 @@ const ComicSearchPage = () => {
         <>
             <Nav />
             <div className="comicSearch">
-                <BackBtn />
+                <BackBtn id={"comic_search_back"} />
                 <SearchForm handleOnSubmit={handleOnSubmit} handleOnChange={handleOnChange} ph={"Search any comic"}/>
                 <div className="cardContainer">
                     {comic == 0

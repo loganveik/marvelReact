@@ -37,7 +37,7 @@ const WritePage = () => {
         <>
             <Nav />
             <div className="write">
-                <BackBtn />
+                <BackBtn id={"write_back"} />
                 <form>
                     <h1>Write A Review For Your Favorite Marvel Character!</h1>
                     <div className="input-group">

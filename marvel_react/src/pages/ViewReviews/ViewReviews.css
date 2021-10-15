@@ -40,7 +40,8 @@
     margin: 2rem 1rem 0;
     transition: 0.5s;
 }
-.reviewCard:hover{
+
+.reviewCard:hover {
     transform: scale(1.04);
 }
 
@@ -98,4 +99,43 @@
 
 .editBtn:hover {
     color: lightblue;
+}
+
+@media(max-width: 1100px) {
+    .view_container {
+        width: 80%;
+        margin-top: 8rem;
+    }
+}
+
+@media(max-width: 800px) {
+    .view_container {
+        width: 90%;
+    }
+    .reviewCard p {
+        font-size: 0.8rem;
+    }
+    /* .reviewCard img {
+        width: 12rem;
+    } */
+}
+
+@media(max-width: 550px) {
+    .reviewCard img {
+        transform: scale(1);
+    }
+    .reviewCard p {
+        font-size: 1rem;
+    }
+    .reviewCard {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem 0 0;
+        text-align: center;
+        border-radius: 20px;
+    }
+    .reviewText{
+        width: 70%;
+    }
 }

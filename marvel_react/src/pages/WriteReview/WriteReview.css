@@ -2,7 +2,7 @@
     width: 100%;
     height: 100vh;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     padding: 1rem;
     color: white;
@@ -60,7 +60,39 @@
     font-family: 'Bangers', sans-serif;
 }
 
-.write form p{
+.write form p {
     text-align: center;
     margin-top: 1rem;
+}
+
+/* @media(max-width: 1100px){
+    .write {
+        flex-direction: column;
+    }
+} */
+
+@media(max-width: 1200px) {
+    .write {
+        flex-direction: column;
+    }
+    .write form {
+        margin-top: 2rem;
+    }
+}
+
+@media(max-width: 780px) {
+    .write form {
+        margin-top: 5rem;
+    }
+}
+
+@media(max-width: 600px) {
+    .write form {
+        width: 90%;
+        padding: 1.5rem;
+    }
+    #write_back {
+        /* margin-top: 1rem; */
+        margin-bottom: 2rem;
+    }
 }
