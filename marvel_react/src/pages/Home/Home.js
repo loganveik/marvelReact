@@ -11,12 +11,15 @@ const HomePage = () => {
     const [username, setUsername] = useState('');
     const [registerEmail, setRegisterEmail] = useState('');
     const [registerPassword, setRegisterPassword] = useState('');
-
     const [registerLoading, setRegisterLoading] = useState(false);
-    const [loginLoading, setLoginLoading] = useState(false);
 
     const [loginEmail, setLoginEmail] = useState('');
     const [loginPassword, setLoginPassword] = useState('');
+    const [loginLoading, setLoginLoading] = useState(false);
+
+    const [demoEmail, setDemoEmail] = useState('test@gmail.com');
+    const [demoPassword, setDemoPassword] = useState('password');
+    const [demoLoading, setDemoLoading] = useState(false);
 
     const onSignup = (e) => {
         e.preventDefault();
@@ -48,6 +51,19 @@ const HomePage = () => {
             .finally(() => setLoginLoading(false))
     }
 
+    const onDemoLogin = (e) => {
+        e.preventDefault();
+        setDemoLoading(true);
+        const auth = getAuth();
+        signInWithEmailAndPassword(auth, demoEmail, demoPassword)
+            .then((userCredential) => {
+                localStorage.setItem('token', userCredential._tokenResponse.idToken);
+                history.push('/profile');
+            })
+            .catch(e => alert(e.message))
+            .finally(() => setDemoLoading(false))
+    }
+
     useEffect(() => {
         const token = localStorage.getItem('token');
         if (token) {
@@ -76,6 +92,7 @@ const HomePage = () => {
                     </div>
                     <div id="btns">
                         <button className="login_btn" type="submit" onClick={onLogin}>{loginLoading ? <ClipLoader size={20} /> : 'Submit'}</button>
+                        <button className="demo_btn" type="submit" onClick={onDemoLogin}>{demoLoading ? <ClipLoader size={20} color={'white'} /> : 'Demo'}</button>
                     </div>
                 </form>
                 <form className="homeForm">
