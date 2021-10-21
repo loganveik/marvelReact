@@ -18,7 +18,7 @@ React, Firebase(auth/firestore), CSS, Javascript, Axios, Node, Express, Marvel A
 3) Character Search Page
 ![charSearch](src/images/charSearch.png)
 4) Comics Search Page
-![comicSearch](src/images/comicsSearch.png)
+![comicSearch](src/images/comicSearch.png)
 5) Write Review Page
 ![write](src/images/writess.png)
 6) My Reviews Page
