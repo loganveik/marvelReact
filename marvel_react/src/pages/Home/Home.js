@@ -35,7 +35,7 @@ const HomePage = () => {
                     })
                     .catch(e => alert(e.message));
             }).catch(e => alert(e.message))
-            .finally(() => setRegisterLoading(false))
+        .finally(() => setRegisterLoading(false))
     }
 
     const onLogin = (e) => {

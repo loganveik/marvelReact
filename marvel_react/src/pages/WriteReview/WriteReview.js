@@ -7,6 +7,7 @@ import axios from 'axios';
 import { db } from '../../firebase';
 import { addDoc, collection } from '@firebase/firestore';
 import { ClipLoader } from 'react-spinners';
+import { getAuth } from 'firebase/auth';
 
 const WritePage = () => {
     const history = useHistory();
@@ -14,6 +15,9 @@ const WritePage = () => {
     const [review, setReview] = useState('');
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
+
+    const auth = getAuth();
+    const user = auth.currentUser;
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -25,7 +29,14 @@ const WritePage = () => {
             const name = result.data.data.results[0].name;
             const img = result.data.data.results[0].thumbnail.path + '.' + result.data.data.results[0].thumbnail.extension;
             const collectionRef = collection(db, "reviews");
-            const payLoad = { character: name, review: review, imgURL: img };
+            const payLoad = {
+                character: name,
+                review: review,
+                imgURL: img,
+                userID: user.uid,
+                userEmail: user.email,
+                userName: user.displayName
+            };
             addDoc(collectionRef, payLoad)
                 .then(() => history.push("/view"))
                 .catch((e) => alert(e.message))
